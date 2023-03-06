@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class US02_ShowRecordsFunctionality {
+public class UsersPage {
 
-    public  US02_ShowRecordsFunctionality(){
+    public UsersPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
