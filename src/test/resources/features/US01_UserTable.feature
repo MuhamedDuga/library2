@@ -1,3 +1,4 @@
+@US01_Sergey
 Feature: Users table
 
   User Story:
