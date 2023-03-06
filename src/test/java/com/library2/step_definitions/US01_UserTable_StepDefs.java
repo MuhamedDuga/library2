@@ -50,9 +50,12 @@ WebDriver driver = Driver.getDriver();
                 String text = cell.getText(); // Get the text of the cell
                 userIDs.add(text);
             }
+            //check if user ids are unique
+
+
 
         }
-        System.out.println(userIDs);
+        //System.out.println(userIDs);
         for (int i = 0; i < userIDs.size(); i++) {
             for (int j = i + 1; j < userIDs.size(); j++) {
                 if (userIDs.get(i).equals(userIDs.get(j))) {
