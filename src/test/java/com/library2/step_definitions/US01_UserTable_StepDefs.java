@@ -2,14 +2,21 @@ package com.library2.step_definitions;
 
 import com.library2.pages.LibrarianMainPage_SR;
 import com.library2.pages.UserTable_SR;
+import com.library2.pages.UsersPage_SR;
 import com.library2.utilities.ConfigurationReader;
 import com.library2.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class US01_UserTable_StepDefs {
-
+WebDriver driver = Driver.getDriver();
     UserTable_SR userTable = new UserTable_SR();
     LibrarianMainPage_SR librarianMainPageSR = new LibrarianMainPage_SR();
 
@@ -33,7 +40,31 @@ public class US01_UserTable_StepDefs {
     }
     @Then("Each user id should be unique")
     public void each_user_id_should_be_unique() {
-        //TODO: Write code here that turns the phrase above into concrete actions
+        WebElement table = driver.findElement(By.xpath("//tbody"));
+        List<WebElement> rows = table.findElements(By.tagName("tr"));
+        ArrayList<String> userIDs = new ArrayList<>();
+        for (WebElement row : rows) {
+            List<WebElement> cells = row.findElements(By.tagName("td"));
+            if (cells.size() > 1) { // Make sure the row has at least two cells
+                WebElement cell = cells.get(1); // Get the second cell (index 1)
+                String text = cell.getText(); // Get the text of the cell
+                userIDs.add(text);
+            }
+
+        }
+        System.out.println(userIDs);
+        for (int i = 0; i < userIDs.size(); i++) {
+            for (int j = i + 1; j < userIDs.size(); j++) {
+                if (userIDs.get(i).equals(userIDs.get(j))) {
+                    System.out.println("Duplicate user ID: " + userIDs.get(i));
+                }else if (!userIDs.get(i).equals(userIDs.get(j))){
+                    System.out.println("Unique user ID: " + userIDs.get(i));
+                }
+            }
+        }
+
+
+
 
 
     }

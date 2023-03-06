@@ -19,8 +19,11 @@ public class UsersPage_SR {
     @FindBy(name = "tbl_users_length")
     public WebElement showRecordsDropdown;
 
-    @FindBy(xpath="//tbody/tr/td[2]")
-    public ArrayList<WebElement> userIDColumn;
+//    @FindBy(xpath="//tbody/tr/td[2]")
+//    public ArrayList<WebElement> userIDColumn;
+
+    @FindBy(xpath="//tbody")
+    public ArrayList<WebElement> table;
 
 
 }
