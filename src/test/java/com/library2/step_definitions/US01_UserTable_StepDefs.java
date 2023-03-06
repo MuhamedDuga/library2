@@ -1,7 +1,7 @@
 package com.library2.step_definitions;
 
-import com.library2.pages.LibrarianMainPage;
-import com.library2.pages.US01_UserTable;
+import com.library2.pages.LibrarianMainPage_SR;
+import com.library2.pages.UserTable_SR;
 import com.library2.utilities.ConfigurationReader;
 import com.library2.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -10,8 +10,8 @@ import io.cucumber.java.en.When;
 
 public class US01_UserTable_StepDefs {
 
-    US01_UserTable userTable = new US01_UserTable();
-    LibrarianMainPage librarianMainPage = new LibrarianMainPage();
+    UserTable_SR userTable = new UserTable_SR();
+    LibrarianMainPage_SR librarianMainPageSR = new LibrarianMainPage_SR();
 
     @Given("I am on the login page")
     public void i_am_on_the_login_page() {
@@ -27,7 +27,7 @@ public class US01_UserTable_StepDefs {
     }
     @When("I click on {string} link")
     public void i_click_on_link(String userLink) {
-        librarianMainPage.UsersLink.click();
+        librarianMainPageSR.UsersLink.click();
 
 
     }

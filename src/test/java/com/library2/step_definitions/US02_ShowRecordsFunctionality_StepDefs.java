@@ -1,6 +1,6 @@
 package com.library2.step_definitions;
 
-import com.library2.pages.UsersPage;
+import com.library2.pages.UsersPage_SR;
 import com.library2.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -9,7 +9,7 @@ import java.util.List;
 
 public class US02_ShowRecordsFunctionality_StepDefs {
 
-    UsersPage ShowRecordsFunctionality = new UsersPage();
+    UsersPage_SR ShowRecordsFunctionality = new UsersPage_SR();
 
     @Then("show records default value should be {int}")
     public void show_records_default_value_should_be(Integer valueRecords) {

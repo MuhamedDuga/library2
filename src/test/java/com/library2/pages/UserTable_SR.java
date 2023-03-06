@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class US01_UserTable {
+public class UserTable_SR {
 
-    public US01_UserTable(){
+    public UserTable_SR(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
