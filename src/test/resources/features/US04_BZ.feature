@@ -1,17 +1,18 @@
-Feature: As a user, I want to select different number of raws to see users records
+@WIP
+Feature: As a user, I want to select different number of rows to see users records
 
- @WIP
+
 Scenario Outline: Show records for <count> options
 Given I am on the login page
- And I login as a librarian
-And I click on "Users" link
+  And I login as a librarian
+ And I click on "Users" link
  #When I select Show <count> records
  #Then show records value should be <count>
  #And the users table must display <count> records
-#Examples:
+Examples:
  | count |
  | 5 |
-# | 10 |
-# | 15 |
-# | 50 |
-# | 100 |
+ | 10 |
+ | 15 |
+ | 50 |
+ | 100 |
