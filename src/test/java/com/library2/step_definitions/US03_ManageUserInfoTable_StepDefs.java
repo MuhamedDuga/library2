@@ -38,7 +38,7 @@ public class US03_ManageUserInfoTable_StepDefs {
     }
     @Then("the users table must display {int} records")
     public void the_users_table_must_display_records(Integer int1) {
-        Assert.assertEquals((int)int1, userInfoTable.showRecords.getSize());
+        Assert.assertEquals((int)int1, userInfoTable.showRecords.isDisplayed());
     }
 
 }
