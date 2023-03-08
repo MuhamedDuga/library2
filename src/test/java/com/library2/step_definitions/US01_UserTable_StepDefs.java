@@ -2,8 +2,7 @@ package com.library2.step_definitions;
 
 import com.library2.pages.LibrarianMainPage_SR;
 import com.library2.pages.LoginPage;
-import com.library2.pages.UserTable_SR;
-import com.library2.pages.UsersPage_SR;
+
 import com.library2.utilities.ConfigurationReader;
 import com.library2.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -17,7 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class US01_UserTable_StepDefs {
-WebDriver driver = Driver.getDriver();
+    WebDriver driver = Driver.getDriver();
+    //TODO: Failed to instantiate class com.library2.step_definitions.US01_UserTable_StepDefs
     //UserTable_SR userTable = new UserTable_SR();
     LoginPage loginPage = new LoginPage();
 
@@ -26,6 +26,7 @@ WebDriver driver = Driver.getDriver();
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 
     }
+
     @Given("I login as a librarian")
     public void i_login_as_a_librarian() {
         loginPage.login(ConfigurationReader.getProperty("librarian_username"), ConfigurationReader.getProperty("librarian_password"));
@@ -34,14 +35,17 @@ WebDriver driver = Driver.getDriver();
     }
 
     LibrarianMainPage_SR librarianMainPageSR = new LibrarianMainPage_SR();
+
     @When("I click on {string} link")
     public void i_click_on_link(String userLink) {
         librarianMainPageSR.UsersLink.click();
 
 
     }
+
     @Then("Each user id should be unique")
     public void each_user_id_should_be_unique() {
+        //TODO: Failed to instantiate class com.library2.step_definitions.US01_UserTable_StepDefs
         WebElement table = driver.findElement(By.xpath("//tbody"));
         List<WebElement> rows = table.findElements(By.tagName("tr"));
         ArrayList<String> userIDs = new ArrayList<>();
@@ -55,21 +59,17 @@ WebDriver driver = Driver.getDriver();
             //check if user ids are unique
 
 
-
         }
         //System.out.println(userIDs);
         for (int i = 0; i < userIDs.size(); i++) {
             for (int j = i + 1; j < userIDs.size(); j++) {
                 if (userIDs.get(i).equals(userIDs.get(j))) {
                     System.out.println("Duplicate user ID: " + userIDs.get(i));
-                }else if (!userIDs.get(i).equals(userIDs.get(j))){
+                } else if (!userIDs.get(i).equals(userIDs.get(j))) {
                     System.out.println("Unique user ID: " + userIDs.get(i));
                 }
             }
         }
-
-
-
 
 
     }

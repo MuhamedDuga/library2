@@ -16,7 +16,7 @@ public class UsersPage_SR {
     @FindBy(xpath="//div[@class='dataTables_length']//option[2]")
     public WebElement showRecords;
 
-    @FindBy(name = "tbl_users_length")
+    @FindBy(xpath = "//select[contains(@class,'form-control input-sm')]")
     public WebElement showRecordsDropdown;
 
 //    @FindBy(xpath="//tbody/tr/td[2]")
