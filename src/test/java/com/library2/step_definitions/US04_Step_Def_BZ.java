@@ -1,5 +1,6 @@
 package com.library2.step_definitions;
 
+import com.library2.pages.LoginPage;
 import com.library2.pages.US04_LoginPage;
 import com.library2.pages.US04_UsersPage_BZ;
 import com.library2.utilities.ConfigurationReader;
@@ -8,20 +9,29 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
+
 
 public class US04_Step_Def_BZ {
 
     US04_UsersPage_BZ us04 = new US04_UsersPage_BZ();
-
     Select select = new Select(us04.rowDropDown);
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+    LoginPage loginPage = new LoginPage();
 
 
+
+
+    @Given("I am on the login page")
+    public void i_am_on_the_login_page() {
+        System.out.println("Problem is in step defs");
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+    }
+    @Given("I login as a librarian")
+    public void i_login_as_a_librarian() {
+        loginPage.userName.sendKeys("blah");
+        loginPage.password.sendKeys("blah");
+        loginPage.submit.click();
+    }
 
     @Given("I click on {string} link")
     public void i_click_on_link() {
