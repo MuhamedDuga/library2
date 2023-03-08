@@ -4,7 +4,7 @@ Feature: As a user, I want to select different number of rows to see users recor
 
 Scenario Outline: Show records for <count> options
 Given I am on the login page
-  And I login as a librarian
+ And I login as a librarian
  And I click on "Users" link
  #When I select Show <count> records
  #Then show records value should be <count>

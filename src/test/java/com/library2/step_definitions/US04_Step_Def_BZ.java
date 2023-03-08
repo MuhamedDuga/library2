@@ -17,26 +17,16 @@ import java.time.Duration;
 public class US04_Step_Def_BZ {
 
     US04_UsersPage_BZ us04 = new US04_UsersPage_BZ();
-    US04_LoginPage loginPage = new US04_LoginPage();
+
     Select select = new Select(us04.rowDropDown);
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
 
-    @Given("I am on the login page")
-    public void i_am_on_the_login_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-    }
-    @Given("I login as a librarian")
-    public void i_login_as_a_librarian() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='inputEmail']")));
-        loginPage.loginUserInput.sendKeys("blah");
-        loginPage.loginPasswordInput.sendKeys("blah");
-        loginPage.SignIn.click();
-    }
+
     @Given("I click on {string} link")
     public void i_click_on_link() {
         us04.UsersPage.click();
-;
+
     }
     @When("I select Show {int} records")
     public void i_select_show_records(Integer int1) {

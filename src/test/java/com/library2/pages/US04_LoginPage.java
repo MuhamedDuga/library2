@@ -10,13 +10,13 @@ public class US04_LoginPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//input[@id='inputEmail']")
+    @FindBy(id ="inputEmail")
     public WebElement loginUserInput;
 
-    @FindBy(xpath = "//input[@id='inputPassword']")
+    @FindBy(id = "inputPassword")
     public WebElement loginPasswordInput;
 
-    @FindBy(xpath = "//button")
+    @FindBy(xpath = "//button[@class='btn btn-lg btn-primary btn-block']")
     public WebElement SignIn;
 
     public void login(String UserName, String Password){
