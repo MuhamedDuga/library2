@@ -1,3 +1,4 @@
+@US02_Sergey
 Feature: Show records functionality
 
   User Story:

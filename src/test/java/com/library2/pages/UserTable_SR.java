@@ -21,12 +21,7 @@ public class UserTable_SR {
     public WebElement signInButton;
 
 
-    public void login(String userNameStr, String passwordStr) {
-        username.sendKeys(userNameStr);
-        password.sendKeys(passwordStr);
-        signInButton.click();
-        // verification that we logged
-    }
+
 
 
 }
