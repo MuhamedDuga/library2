@@ -23,22 +23,12 @@ public class US03_ManageUserInfoTable_StepDefs {
     public void i_login_as_a_librarian() {
         loginPage.login(ConfigurationReader.getProperty("librarian_username"), ConfigurationReader.getProperty("librarian_password"));
 
-
     }
     @Given("I click on {string} link")
     public void i_click_on_link(String string) {
         userPageObject.users.click();
 
     }
-    @Then("show records value should be {int}")
-    public void show_records_value_should_be(Integer int1) {
-
-    }
-    @Then("the users table must display {int} records")
-    public void the_users_table_must_display_records(Integer int1) {
-
-    }
-
     @When("I select Show {string} records")
     public void iSelectShowRecords(String num) {
         userPageObject.chooseOption(num);
