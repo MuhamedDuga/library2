@@ -1,8 +1,5 @@
 package com.library2.pages;
 
-
-
-
 import com.library2.utilities.BrowserUtils;
 import com.library2.utilities.Driver;
 import org.openqa.selenium.By;
