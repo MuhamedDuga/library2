@@ -39,7 +39,10 @@ public class US01_UserTable_StepDefs {
     }
     @Then("Each user id should be unique")
     public void each_user_id_should_be_unique() {
-        WebElement table = Driver.getDriver().findElement(By.xpath("//tbody"));
+        userTable.checkUserIDUnique();
+        //TODO attn Sergey please contrast your method with my suggestion.
+
+ /*       WebElement table = Driver.getDriver().findElement(By.xpath("//tbody"));
         List<WebElement> rows = table.findElements(By.tagName("tr"));
         ArrayList<String> userIDs = new ArrayList<>();
         for (WebElement row : rows) {
@@ -65,7 +68,7 @@ public class US01_UserTable_StepDefs {
             }
         }
 
-
+*/
 
 
 

@@ -11,14 +11,14 @@ import java.util.List;
 
 public class UserTable_SR {
 
-    public UserTable_SR(){
+    public UserTable_SR() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(id = "inputEmail")
     public WebElement username;
 
-    @FindBy(id="inputPassword")
+    @FindBy(id = "inputPassword")
     public WebElement password;
 
     @FindBy(tagName = "button")
@@ -32,9 +32,19 @@ public class UserTable_SR {
         // verification that we logged
     }
 
-    @FindBy (xpath = "//tbody")
+    @FindBy(xpath = "//tbody")
     public WebElement table;
 
+    //-----------------------------------------------------------------------------------------
+    // BZ added after this line
+
+    @FindBy(xpath = "//tbody//td[2]")
+    public List<WebElement> userIDs;
+    //This method finds an array list of only the user ID's
+
+    /*
+    NOTE FROM BZB: I DIDN'T REALLY UNDERSTAND WHAT THIS METHOD IS ACCOMPLISHING.
+    //TODO: attn Sergey: please compare with my new unique entries method
     public void uniqueEntries() {
         List<WebElement> rows = table.findElements(By.tagName("tr"));
         ArrayList<String> userIDs = new ArrayList<>();
@@ -48,4 +58,29 @@ public class UserTable_SR {
 
 
         }
+
+     */
+    public boolean checkUserIDUnique() {
+        String userID;
+
+        for (int i = 0; i < userIDs.size(); i++) {
+
+            userID = userIDs.get(i).getText();
+
+            for (int j = i + 1; j < userIDs.size(); j++) {
+
+                String compare = userIDs.get(j).getText();
+
+                if (userID.equals(compare)) {
+                    return false;
+                }
+
+            }
+
+
+        }
+        return true;
+
+
     }
+}
