@@ -8,6 +8,7 @@ import com.library2.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -39,7 +40,7 @@ public class US01_UserTable_StepDefs {
     }
     @Then("Each user id should be unique")
     public void each_user_id_should_be_unique() {
-        userTable.checkUserIDUnique();
+        Assert.assertTrue(userTable.checkUserIDUnique());
         //TODO attn Sergey please contrast your method with my suggestion.
 
  /*       WebElement table = Driver.getDriver().findElement(By.xpath("//tbody"));
