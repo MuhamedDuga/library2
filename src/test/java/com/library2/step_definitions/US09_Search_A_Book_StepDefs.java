@@ -27,7 +27,6 @@ public class US09_Search_A_Book_StepDefs {
     NavBar navBar = new NavBar();
     @When("I navigate to {string} page")
         public void i_navigate_to_page() {
-
             navBar.books.click();
 
     }
@@ -48,4 +47,3 @@ public class US09_Search_A_Book_StepDefs {
 
 
     }
-}
