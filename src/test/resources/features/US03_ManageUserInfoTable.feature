@@ -9,6 +9,6 @@ Feature: manage user info table
     Given I am on the login page
     And I login as a librarian
     And I click on "Users" link
-    When I select Show 50 records
-    Then show records value should be 50
-    And the users table must display 50 records
+    When I select Show "50" records
+    Then show records value should be "50"
+    And the users table must display "50" records

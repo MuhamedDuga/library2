@@ -12,11 +12,12 @@ import org.openqa.selenium.support.ui.Select;
 
 public class US03_ManageUserInfoTable_StepDefs {
     LoginPage loginPage = new LoginPage();
-    ManageUserInfoTablePage_MD userInfoTable = new ManageUserInfoTablePage_MD();
+    ManageUserInfoTablePage_MD userPageObject = new ManageUserInfoTablePage_MD();
+
 
     @Given("I am on the login page")
     public void i_am_on_the_login_page() {
-
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
     @Given("I login as a librarian")
     public void i_login_as_a_librarian() {
@@ -26,19 +27,32 @@ public class US03_ManageUserInfoTable_StepDefs {
     }
     @Given("I click on {string} link")
     public void i_click_on_link(String string) {
-        userInfoTable.users.click();
-    }
-    @When("I select Show {int} records")
-    public void i_select_show_records(Integer integer) {
-        userInfoTable.selectFromDropdown(integer);
+        userPageObject.users.click();
+
     }
     @Then("show records value should be {int}")
-    public void show_records_value_should_be(Integer integer) {
-        Assert.assertEquals(userInfoTable.valueOfDropdown(), integer);
+    public void show_records_value_should_be(Integer int1) {
+
     }
     @Then("the users table must display {int} records")
-    public void the_users_table_must_display_records(Integer integer) {
-        Assert.assertEquals((userInfoTable.numOfRows(), integer+ "");
+    public void the_users_table_must_display_records(Integer int1) {
+
+    }
+
+    @When("I select Show {string} records")
+    public void iSelectShowRecords(String num) {
+        userPageObject.chooseOption(num);
+    }
+
+    @Then("show records value should be {string}")
+    public void showRecordsValueShouldBe(String num) {
+        Assert.assertEquals(num, userPageObject.readSelectedOption());
+
+    }
+
+    @Then("the users table must display {string} records")
+    public void the_users_table_must_display_records(String string) {
+        Assert.assertEquals(string, userPageObject.numberOfTableRows());
     }
 
 }
