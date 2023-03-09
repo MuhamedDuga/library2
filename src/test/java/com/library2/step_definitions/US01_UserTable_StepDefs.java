@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class US01_UserTable_StepDefs {
-WebDriver driver = Driver.getDriver();
     UserTable_SR userTable = new UserTable_SR();
     LibrarianMainPage_SR librarianMainPageSR = new LibrarianMainPage_SR();
 
@@ -40,7 +39,7 @@ WebDriver driver = Driver.getDriver();
     }
     @Then("Each user id should be unique")
     public void each_user_id_should_be_unique() {
-        WebElement table = driver.findElement(By.xpath("//tbody"));
+        WebElement table = Driver.getDriver().findElement(By.xpath("//tbody"));
         List<WebElement> rows = table.findElements(By.tagName("tr"));
         ArrayList<String> userIDs = new ArrayList<>();
         for (WebElement row : rows) {
