@@ -5,9 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class NavBarPage {
 
-    public void NavBar(){
+    public NavBarPage(){
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -18,6 +20,10 @@ public class NavBarPage {
     @FindBy(xpath = "//input[@type='search']")
     public WebElement searchBtn;
 
-   //  @FindBy(xpath = "//div[@class = 'collapse navbar-collapse']")
-   // public WebElement navBar;
+    @FindBy (tagName = "th")
+    public List<WebElement> keysHeader;
+
+    @FindBy (tagName = "td")
+    public List<WebElement> keyValues;
+
 }

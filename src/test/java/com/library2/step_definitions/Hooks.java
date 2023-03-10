@@ -1,8 +1,5 @@
 package com.library2.step_definitions;
 
-
-
-
 import com.library2.utilities.BrowserUtils;
 import com.library2.utilities.ConfigurationReader;
 import com.library2.utilities.Driver;
@@ -56,11 +53,13 @@ public class Hooks {
 
     //@BeforeStep
     public void setupStep(){
+
         System.out.println("-----> @BeforeSTEP : Running before each step!");
     }
 
     //@AfterStep
     public void teardownStep(){
+
         System.out.println("-----> @AfterSTEP : Running after each step!");
     }
 
