@@ -3,6 +3,9 @@ package com.library2.step_definitions;
 import com.library2.pages.LoginPage;
 import com.library2.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
 public class LoginStepDefs {
 
 
@@ -39,7 +42,11 @@ public class LoginStepDefs {
     }
 
 
+    @When("I select Show <count> records")
+    public void iSelectShowCountRecords() {
+    }
 
-
-
+    @Then("show records value should be <count>")
+    public void showRecordsValueShouldBeCount() {
+    }
 }
