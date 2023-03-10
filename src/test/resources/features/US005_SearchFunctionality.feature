@@ -8,7 +8,7 @@ Feature: Search functionality on the users page
     And I click on "Users" link
 
     Scenario Outline: Search accuracy
-      When I search for "test"
+      When I search for "test" as a librarian
       Then table should contain rows with "<test>"
 
       Examples:

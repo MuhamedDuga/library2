@@ -2,6 +2,7 @@ package com.library2.step_definitions;
 
 import com.library2.pages.DashBoardPage;
 import com.library2.pages.LoginPage;
+import com.library2.utilities.BrowserUtils;
 import com.library2.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -12,12 +13,6 @@ import org.junit.Assert;
 public class US10_StepDef {
 
     LoginPage loginPage = new LoginPage();  // use web elements
-    @Given("I am on the login page")
-    public void iAmOnTheLoginPage() {
-        Driver.getDriver().get("https://library2.cydeo.com/login.html");
-
-
-    }
 
     @When("I enter user name {string}")
     public void iEnterUserName(String username) {
@@ -38,6 +33,7 @@ public class US10_StepDef {
       DashBoardPage dashBoardPage = new DashBoardPage();
     @Then("dashboard should be displayed {string}")
     public void dashboardShouldBeDisplayed(String page) {
+        BrowserUtils.sleep(1);
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(page.toLowerCase()));
 
         //Assert.assertTrue(dashBoardPage.dashBoard.isDisplayed());

@@ -19,38 +19,23 @@ import java.util.List;
 public class US005_SearchFunctionality_StepDefs {
 
     LoginPage loginPage = new LoginPage();
-    @Given("I am on the login page")
-    public void i_am_on_the_login_page(){
-       String currentURL =  Driver.getDriver().getCurrentUrl();
-       Assert.assertEquals(currentURL, ConfigurationReader.getProperty("url"));
 
-
-    }
 
     US005_Page us005_page = new US005_Page();
 
-    @Given("I click on {string} link")
-    public void i_click_on_link(String string) {
-        us005_page.usersLink.click();
-        Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://library2.cydeo.com/#users");
-
-    }
-
-    @When("I search for {string}")
+    @When("I search for {string} as a librarian")
     public void i_search_for(String testString) {
         us005_page.searchBox.sendKeys(testString);
-
     }
+
     @Then("table should contain rows with {string}")
     public void table_should_contain_rows_with(String expected) {
         BrowserUtils.sleep(2);
         String actualResult = us005_page.testText.getText().toLowerCase().trim().substring(0,4);
         System.out.println("Expected result: "+expected);
         System.out.println("Actual result: "+actualResult);
-
         String expectedResult = expected.toString();
         Assert.assertEquals(expectedResult, actualResult);
-
     }
 
 

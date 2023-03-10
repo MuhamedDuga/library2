@@ -15,28 +15,18 @@ import java.util.*;
 
 public class US09_Search_A_Book_StepDefs {
         LoginPage loginPage = new LoginPage();
-    @Given("I am on the login page")
-    public void i_am_on_the_login_page() {
 
-        loginPage.login(ConfigurationReader.getProperty("student_username"), (ConfigurationReader.getProperty("student_password")));
-
-    }
     @Given("I login to application as a student")
     public void i_login_to_application_as_a_student() {
-    }
-
-         NavBarPage navBarPage = new NavBarPage();
-
-    //@When("I navigate to Books page")
-    //public void iNavigateToBooksPage() {
-     //       navBarPage.books.click();
+        loginPage.login(ConfigurationReader.getProperty("student_username"), (ConfigurationReader.getProperty("student_password")));
+            }
+            NavBarPage navBarPage = new NavBarPage();
 
     @When("I navigate to {string} page")
     public void iNavigateToPage(String books) {
        navBarPage.books.click();
 
     }
-
 
     @When("I search for {string}")
     public void i_search_for(String bookName) {

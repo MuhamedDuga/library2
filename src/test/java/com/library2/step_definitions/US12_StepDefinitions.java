@@ -16,15 +16,12 @@ public class US12_StepDefinitions {
     }
 
     LoginPage loginPage = new LoginPage();
-    @Given("I login as a librarian")
-    public void i_login_as_a_librarian() {
-      loginPage.login(ConfigurationReader.getProperty("librarian_username"), ConfigurationReader.getProperty("librarian_password"));
-    }
+
 
 US12_HomePage homepage = new US12_HomePage();
 
 
-    @When("I click on {string} module")
+    @When("I click on {string} module.")
     public void iClickOnModule(String moduleLink) {
 
         if(moduleLink.equalsIgnoreCase("Users")){
@@ -36,7 +33,7 @@ US12_HomePage homepage = new US12_HomePage();
         }
     }
 
-    @Then("{string} page should be displayed")
+    @Then("{string} page should be displayed.")
     public void pageShouldBeDisplayed(String moduleLink) {
 
         if(moduleLink.equalsIgnoreCase("Users")){

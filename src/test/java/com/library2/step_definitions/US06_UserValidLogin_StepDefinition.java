@@ -14,17 +14,12 @@ public class US06_UserValidLogin_StepDefinition {
     HomePageMenu homePageMenu = new HomePageMenu();
 
 
-    @Given("I am on the login page")
-    public void iAmOnTheLoginPage() {
-        Driver.getDriver().get("https://library2.cydeo.com/login.html");
-    }
 
     @When("I login using {string} and {string}")
     public void iLoginUsingAnd(String email, String password) {
         loginPage.userName.sendKeys(email);
         loginPage.password.sendKeys(password);
         loginPage.submit.click();
-
     }
 
     @Then("student account holder name should be {string}")

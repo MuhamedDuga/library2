@@ -7,8 +7,8 @@ Feature: Page navigation links
 
 
   Scenario Outline: : Go to users page
-    When I click on "<moduleLink>" module
-    Then "<moduleLink>" page should be displayed
+    When I click on "<moduleLink>" module.
+    Then "<moduleLink>" page should be displayed.
 
     Examples:
       | moduleLink |
