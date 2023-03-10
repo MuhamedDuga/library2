@@ -1,4 +1,4 @@
-@login
+@US03_MD
 Feature: Books search
 
   Scenario: Verify book search results
