@@ -20,10 +20,10 @@ public class NavBarPage {
     @FindBy(xpath = "//input[@type='search']")
     public WebElement searchBtn;
 
-    @FindBy (tagName = "th")
+    @FindBy (xpath = "//th")
     public List<WebElement> keysHeader;
 
-    @FindBy (tagName = "td")
+    @FindBy (xpath = "//td")
     public List<WebElement> keyValues;
 
 }

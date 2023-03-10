@@ -2,11 +2,13 @@ package com.library2.step_definitions;
 
 import com.library2.pages.LoginPage;
 import com.library2.pages.NavBarPage;
+import com.library2.utilities.BrowserUtils;
 import com.library2.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import java.util.*;
@@ -39,13 +41,16 @@ public class US09_Search_A_Book_StepDefs {
     @When("I search for {string}")
     public void i_search_for(String bookName) {
 
-        navBarPage.searchBtn.sendKeys(bookName);
+        BrowserUtils.sleep(2);
+        navBarPage.searchBtn.sendKeys(bookName+ Keys.ENTER);
+        BrowserUtils.sleep(2);
+
 
     }
     @Then("books table should contain results matching The Goldfinch")
-    public void books_table_should_contain_results_matching_the_goldfinch(Map<String, Objects> bookInfo) {
-
-        Map <String, Objects> expectedMap = new TreeMap<>(bookInfo);
+    public void books_table_should_contain_results_matching_the_goldfinch(Map<String, Object> bookInfo) {
+        System.out.println(bookInfo);
+        Map <String, Object> expectedMap = new TreeMap<>(bookInfo);
         Map<String, Object> actualMap = new TreeMap<>();
 
         List<String> keys = new ArrayList<>();
@@ -58,9 +63,10 @@ public class US09_Search_A_Book_StepDefs {
             values.add(eachKey.getText());
         }
 
-        for (int i = 0; i < navBarPage.keysHeader.size(); i++) {
-            actualMap.put(navBarPage.keysHeader.get(i).getText(), navBarPage.keyValues.get(i));
+        for (int i = 1; i < navBarPage.keysHeader.size()-1; i++) {
+            actualMap.put(navBarPage.keysHeader.get(i).getText(), navBarPage.keyValues.get(i).getText());
         }
+
 
         Assert.assertEquals(expectedMap, actualMap);
 
