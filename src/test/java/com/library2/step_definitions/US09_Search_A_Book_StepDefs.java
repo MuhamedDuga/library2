@@ -42,7 +42,7 @@ public class US09_Search_A_Book_StepDefs {
     public void i_search_for(String bookName) {
 
         BrowserUtils.sleep(2);
-        navBarPage.searchBtn.sendKeys(bookName+ Keys.ENTER);
+        navBarPage.searchBtn.sendKeys(bookName);
         BrowserUtils.sleep(2);
 
 
