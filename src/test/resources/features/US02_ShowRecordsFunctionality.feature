@@ -1,9 +1,8 @@
-@US02_Sergey
-Feature: Show records functionality
+@B28G5-121
+Feature: Default
 
-  User Story:
-  As a user, I want to see users information in different records.
-
+	#US02 As a user, I want to see users information in different records.
+  @B28G5-120
   Scenario: Verify default values in Users page
     Given I am on the login page
     And I login as a librarian
