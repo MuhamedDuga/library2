@@ -22,7 +22,7 @@ public class US005_SearchFunctionality_StepDefs {
     @Given("I am on the login page")
     public void i_am_on_the_login_page(){
        String currentURL =  Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals(currentURL, ConfigurationReader.getProperty("url"));
+       Assert.assertEquals(currentURL, ConfigurationReader.getProperty("url"));
 
 
     }
