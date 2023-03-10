@@ -1,8 +1,5 @@
 package com.library2.step_definitions;
 
-
-
-
 import com.library2.utilities.BrowserUtils;
 import com.library2.utilities.ConfigurationReader;
 import com.library2.utilities.Driver;
@@ -21,6 +18,7 @@ for ALL the SCENARIOS and even STEPS.
 public class Hooks {
 
     //import the @Before coming from io.cucumber.java
+
     @Before (order = 1)
     public void setupMethod(){
 
@@ -28,6 +26,8 @@ public class Hooks {
 
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
+
+
 
     //@Before (value = "@login", order = 2 )
     public void login_scenario_before(){
@@ -56,11 +56,13 @@ public class Hooks {
 
     //@BeforeStep
     public void setupStep(){
+
         System.out.println("-----> @BeforeSTEP : Running before each step!");
     }
 
     //@AfterStep
     public void teardownStep(){
+
         System.out.println("-----> @AfterSTEP : Running after each step!");
     }
 
