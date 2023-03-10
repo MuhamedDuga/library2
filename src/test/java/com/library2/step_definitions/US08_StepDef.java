@@ -15,21 +15,7 @@ import java.util.Map;
 public class US08_StepDef {
     US08_LoginPage LoginPage = new US08_LoginPage();
 
-    @Given("I am on the login page")
-    public void i_am_on_the_login_page() {
 
-    }
-    @Given("I login using following credentials:")
-    public void i_login_using_following_credentials(Map<String,String> Credentials) {
-      LoginPage.userName.sendKeys(Credentials.get("email"));
-        LoginPage.password.sendKeys(Credentials.get("password"));
-        LoginPage.submit.click();
-    }
-    @Given("I click on {string} link")
-    public void i_click_on_link(String string) {
-        BrowserUtils.sleep(1);
-        LoginPage.usersLink.click();
-    }
     @When("I search for “{int}\"")
     public void i_search_for(Integer ID) {
         BrowserUtils.sleep(1);

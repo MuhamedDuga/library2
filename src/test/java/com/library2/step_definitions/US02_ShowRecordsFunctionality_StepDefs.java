@@ -17,28 +17,8 @@ public class US02_ShowRecordsFunctionality_StepDefs {
     WebDriver driver = Driver.getDriver();
     //UsersPage_SR ShowRecordsFunctionality = new UsersPage_SR();
 
-    @Then("show records default value should be {int}")
-    public void show_records_default_value_should_be(Integer value) {
-        WebElement dropdown = driver.findElement(By.xpath("//select[contains(@class,'form-control input-sm')]"));
-        Select select = new Select(dropdown);
-        WebElement defaultOption = select.getFirstSelectedOption();
-        String actual = defaultOption.getText();
-        String expected = value.toString();
-        System.out.println("actual = " + actual);
-        System.out.println("expected = " + expected);
-        Assert.assertEquals(expected, actual);
 
 
-
-
-    }
-    @Then("show records should have following options:")
-    public void show_records_should_have_following_options(List<String> expectedRow) {
-        WebElement dropdown = driver.findElement(By.xpath("//select[contains(@class,'form-control input-sm')]"));
-        List<String> actualRow = BrowserUtils.dropdownOptions_as_STRING(dropdown);
-        System.out.println("actualRow = " + actualRow);
-        System.out.println("expectedRow = " + expectedRow);
-        Assert.assertEquals(expectedRow, actualRow);
 
         //TODO: Why this code does not work?
         /*UsersPage_SR ShowRecordsFunctionality = new UsersPage_SR();
@@ -51,4 +31,4 @@ public class US02_ShowRecordsFunctionality_StepDefs {
 
     }
 
-}
+
