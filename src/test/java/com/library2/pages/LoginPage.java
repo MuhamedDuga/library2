@@ -14,7 +14,6 @@ public class LoginPage {
 
     @FindBy(id="inputEmail")
     public WebElement userName;
-
     @FindBy(id="inputPassword")
     public WebElement password;
 
